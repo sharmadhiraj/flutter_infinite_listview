@@ -1,19 +1,15 @@
-name: flutterinfinitelistview
+name: flutter_infinite_listview
 description: Demonstration of infinite scrolling listview on Flutter.
 version: 1.0.0
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=3.2.6 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
-  http: ^0.13.3
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  http: ^1.2.1
 
 flutter:
   uses-material-design: true

@@ -1,8 +1,16 @@
 # Flutter Infinite ListView
 
-Demonstration of infinite scrolling list view on Flutter.
+> Note : I've developed a package that replicates the functionality showcased in this demo project.
+> If
+> you prefer a ready-made solution over creating your own, take a look at
+> this [package](https://pub.dev/packages/infinite_listview_package).
 
-This project is demonstration of infinite scrolling of ListView on Flutter. List is built using ListView.builder. Data is fetched from https://jsonplaceholder.typicode.com/
+Infinite Scrolling ListView Demonstration in Flutter.
 
-## Output
-<img src="output.gif" width="200"/>
+This project showcases the implementation of infinite scrolling for a ListView in Flutter. The list
+is constructed using ListView.builder, with data being fetched
+from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+
+### Demo
+
+<img src="output.gif" alt="Demo Gif" width="300"/>
