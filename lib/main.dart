@@ -4,6 +4,8 @@ import 'package:flutter_infinite_listview/screens/photo_list.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
