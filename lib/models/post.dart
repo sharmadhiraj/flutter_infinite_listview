@@ -1,17 +1,21 @@
 class Post {
+  final int id;
   final String title;
   final String body;
 
-  const Post(this.title, this.body);
+  const Post({required this.id, required this.title, required this.body});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      json["title"],
-      json["body"],
+      id: json["id"] as int,
+      title: json["title"] as String,
+      body: json["body"] as String,
     );
   }
 
-  static List<Post> parseList(List<dynamic> list) {
-    return list.map((i) => Post.fromJson(i)).toList();
+  static List<Post> parseList(dynamic list) {
+    return (list as List<dynamic>)
+        .map((item) => Post.fromJson(item as Map<String, dynamic>))
+        .toList();
   }
 }

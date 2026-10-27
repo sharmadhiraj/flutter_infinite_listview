@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_infinite_listview/screens/photo_list.dart';
+import 'package:flutter_infinite_listview/screens/post_list_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const InfiniteListViewApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class InfiniteListViewApp extends StatelessWidget {
+  const InfiniteListViewApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Infinite Scrolling ListView",
-      theme: ThemeData(primarySwatch: Colors.teal),
-      home: PhotosListScreen(),
+      title: "Infinite ListView",
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+      ),
+      home: const PostListScreen(),
     );
   }
 }
