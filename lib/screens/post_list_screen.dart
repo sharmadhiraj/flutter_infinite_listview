@@ -79,20 +79,45 @@ class _PostListScreenState extends State<PostListScreen> {
   }
 
   Widget _buildFooter() {
-    if (_hasError) {
-      return RetryButton(
-        message: "Could not load more posts",
-        onRetry: _loadNextPage,
-      );
-    }
-    if (!_hasMore) return const SizedBox(height: 24);
+    if (_hasError) return _buildRetryFooter();
+    if (!_hasMore) return _buildEndFooter();
     return const Padding(
       padding: EdgeInsets.all(24),
       child: Center(child: CircularProgressIndicator()),
     );
   }
 
+  Widget _buildRetryFooter() {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Center(
+        child: Semantics(
+          label: "Retry loading more posts",
+          button: true,
+          child: TextButton.icon(
+            onPressed: _loadNextPage,
+            icon: const Icon(Icons.refresh),
+            label: const Text("Could not load more posts. Tap to retry"),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEndFooter() {
+    return Padding(
+      padding: const EdgeInsets.all(24),
+      child: Center(
+        child: Text(
+          "That's all, you have loaded everything",
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
+      ),
+    );
+  }
+
   void _loadMoreWhenNearEnd() {
+    if (_hasError) return;
     final ScrollPosition position = _scrollController.position;
     if (position.extentAfter < _loadMoreDistance) _loadNextPage();
   }
