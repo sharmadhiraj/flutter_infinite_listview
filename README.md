@@ -1,16 +1,35 @@
 # Flutter Infinite ListView
 
-> Note : I've developed a package that replicates the functionality showcased in this demo project.
-> If
-> you prefer a ready-made solution over creating your own, take a look at
-> this [package](https://pub.dev/packages/infinite_listview_package).
+A minimal example of infinite scrolling in Flutter. Posts load page by page from
+[DummyJSON](https://dummyjson.com/docs/posts) as you scroll.
 
-Infinite Scrolling ListView Demonstration in Flutter.
+<img src="demo.gif" alt="Demo" width="260"/>
 
-This project showcases the implementation of infinite scrolling for a ListView in Flutter. The list
-is constructed using ListView.builder, with data being fetched
-from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+## Features
 
-### Demo
+- Loads the next page before you reach the end of the list
+- Loading indicator, and a retry button when a request fails
+- Pull to refresh
+- Runs on Android, iOS and web
 
-<img src="output.gif" alt="Demo Gif" width="300"/>
+## Project structure
+
+```
+lib/
+  main.dart                    App entry point and theme
+  models/                      Post and PostPage
+  services/post_service.dart   Paginated API request (limit and skip)
+  screens/post_list_screen.dart  Scrolling, paging and state
+  widgets/                     PostCard and RetryButton
+```
+
+## Run
+
+```sh
+flutter run
+```
+
+## Need this in your app?
+
+Use the [infinite_listview_package](https://pub.dev/packages/infinite_listview_package)
+package instead of writing the paging logic yourself.
