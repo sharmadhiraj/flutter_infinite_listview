@@ -3,6 +3,8 @@
 A minimal example of infinite scrolling in Flutter. Posts load page by page from
 [DummyJSON](https://dummyjson.com/docs/posts) as you scroll.
 
+[Live demo](https://sharmadhiraj.github.io/flutter_infinite_listview/)
+
 <img src="demo.gif" alt="Demo" width="260"/>
 
 ## Features
